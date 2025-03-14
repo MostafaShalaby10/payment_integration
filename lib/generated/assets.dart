@@ -2,12 +2,29 @@
 class Assets {
   Assets._();
 
+  static const String apiServiceApiConstants = 'lib/core/api_service/api_constants.dart';
+  static const String apiServiceApiService = 'lib/core/api_service/api_service.dart';
+  static const String cubitStripeBlocCubit = 'lib/features/stripe_payment/logic/cubit/stripe_bloc_cubit.dart';
+  static const String cubitStripeBlocState = 'lib/features/stripe_payment/logic/cubit/stripe_bloc_state.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String imagesApplepay = 'lib/core/assets/images/applepay.png';
   static const String imagesCart = 'lib/core/assets/images/cart.png';
+  static const String imagesMaster = 'lib/core/assets/images/master.png';
   static const String imagesPaypal = 'lib/core/assets/images/paypal.png';
   static const String imagesVisa = 'lib/core/assets/images/visa.png';
   static const String libMain = 'lib/main.dart';
+  static const String modelsIntentRequestModel = 'lib/features/stripe_payment/data/models/intent_request_model.dart';
+  static const String paymentIntentResponseModelAmountDetails = 'lib/features/stripe_payment/data/models/payment_intent_response_model/amount_details.dart';
+  static const String paymentIntentResponseModelAutomaticPaymentMethods = 'lib/features/stripe_payment/data/models/payment_intent_response_model/automatic_payment_methods.dart';
+  static const String paymentIntentResponseModelCard = 'lib/features/stripe_payment/data/models/payment_intent_response_model/card.dart';
+  static const String paymentIntentResponseModelLink = 'lib/features/stripe_payment/data/models/payment_intent_response_model/link.dart';
+  static const String paymentIntentResponseModelMetadata = 'lib/features/stripe_payment/data/models/payment_intent_response_model/metadata.dart';
+  static const String paymentIntentResponseModelPaymentIntentResponseModel = 'lib/features/stripe_payment/data/models/payment_intent_response_model/payment_intent_response_model.dart';
+  static const String paymentIntentResponseModelPaymentMethodOptions = 'lib/features/stripe_payment/data/models/payment_intent_response_model/payment_method_options.dart';
+  static const String paymentIntentResponseModelTip = 'lib/features/stripe_payment/data/models/payment_intent_response_model/tip.dart';
+  static const String repoImplementionPaymentIntreface = 'lib/features/stripe_payment/data/repos/repo_implemention/payment_intreface.dart';
+  static const String repoInterfacesStripeImplemention = 'lib/features/stripe_payment/data/repos/repo_interfaces/stripe_implemention.dart';
+  static const String utilsServiceLocator = 'lib/core/utils/service_locator.dart';
   static const String viewCartView = 'lib/features/stripe_payment/view/cart_view.dart';
   static const String viewCustomListView = 'lib/features/stripe_payment/view/custom_list_view.dart';
   static const String viewPaymentDetails = 'lib/features/stripe_payment/view/payment_details.dart';

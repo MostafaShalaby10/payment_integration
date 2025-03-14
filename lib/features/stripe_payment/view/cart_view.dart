@@ -17,19 +17,18 @@ class CartView extends StatelessWidget {
       create: (context) => StripeBlocCubit(StripeImplemention()),
       child: BlocConsumer<StripeBlocCubit, StripeBlocState>(
         listener: (context, state) {
-            if(state is CreatePaymentIntentSuccessfully){
-              log("Succssfully Payment");
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SuccessfullyPayment(),
-                ),
-              );
-            }else if(state is CreatePaymentIntentFailed){
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error)));
-              log( state.error);
-            }
-
+          if (state is CreatePaymentIntentSuccessfully) {
+            log("Succssfully Payment");
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SuccessfullyPayment()),
+            );
+          } else if (state is CreatePaymentIntentFailed) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.error)));
+            log(state.error);
+          }
         },
         builder: (context, state) {
           return Scaffold(

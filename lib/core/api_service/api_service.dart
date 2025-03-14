@@ -4,7 +4,10 @@ import 'package:payment/core/api_service/api_constants.dart';
 class ApiService {
   final Dio _dio = Dio();
 
-  Future<Response> createPaymentIntentPostMethod({required Map data , required String userToken}) async {
+  Future<Response> createPaymentIntentPostMethod({
+    required Map data,
+    required String userToken,
+  }) async {
     var response = await _dio.post(
       ApiConstants.createPaymentIntentURL,
       data: data,

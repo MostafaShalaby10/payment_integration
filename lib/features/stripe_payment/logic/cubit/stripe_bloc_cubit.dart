@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:payment/core/api_service/api_constants.dart';
@@ -9,30 +11,27 @@ import 'package:payment/features/stripe_payment/data/repos/repo_implemention/pay
 part 'stripe_bloc_state.dart';
 
 class StripeBlocCubit extends Cubit<StripeBlocState> {
-     PaymentIntreface paymentIntreface; 
+  PaymentIntreface paymentIntreface;
   StripeBlocCubit(this.paymentIntreface) : super(StripeBlocInitial());
   static StripeBlocCubit get(context) => BlocProvider.of(context);
   Future createPaymentIntent() async {
     emit(CreatePaymentIntentLoading());
+    var outputModel = await paymentIntreface.createPaymentIntent(
+      apiService: getIt<ApiService>(),
+      intentRequestModel: IntentRequestModel(amount: 2000, currency: 'USD'),
+      userToken: ApiConstants.userToken,
+    );
+    await paymentIntreface.createPaymentIntentSheet(
+      secrertKey: outputModel.clientSecret!,
+    );
+
     await paymentIntreface
-        .createPaymentIntent(
-          apiService: getIt<ApiService>(),
-          intentRequestModel: IntentRequestModel(amount: 2000, currency: 'USD'),
-          userToken: ApiConstants.userToken,
-        )
+        .displayPaymentSheet()
         .then((value) {
-          if (value.statusCode == 200) {
-            emit(CreatePaymentIntentSuccessfully());
-          } else {
-            emit(CreatePaymentIntentFailed('Failed to create payment intent'));
-          }
+          emit(CreatePaymentIntentSuccessfully());
         })
-        .catchError((e) {
-          emit(
-            CreatePaymentIntentFailed(
-              'Failed to create payment intent ${e.toString()}',
-            ),
-          );
+        .catchError((error) {
+          emit(CreatePaymentIntentFailed(error.toString()));
         });
   }
 }
