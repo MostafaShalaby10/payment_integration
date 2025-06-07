@@ -1,16 +1,29 @@
-# payment
+# Payment Integration with Stripe
 
-A new Flutter project.
+This project demonstrates how to integrate **Stripe** for secure and seamless payment processing within your application.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- 💳 **Secure Payments** – Process transactions safely using Stripe.
+- 🔄 **Subscription & One-Time Payments** – Handle recurring and single payments.
+- 🚀 **Fast Checkout** – Seamless payment experience for users.
+- 🌍 **Multi-Currency Support** – Accept payments in different currencies.
+- 🔑 **Token-Based Authentication** – Secure payment transactions.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Stripe API** – Payment gateway.
+- **Flutter/Dart ** 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+### Prerequisites
+
+- A Stripe account – [Sign up here](https://stripe.com)
+- API keys from the Stripe dashboard.
+
+### Clone the Repository
+
+```sh
+git clone https://github.com/your-username/payment-integration-stripe.git
+cd payment-integration-stripe
